@@ -1,0 +1,515 @@
+/* --- ESTILOS GENERALES Y FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body {
+    font-family: 'Architects Daughter', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Azul cielo muy clarito */
+    color: #333;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    line-height: 1.6;
+}
+
+/* --- ANIMACIÓN DE WOODSTOCK VOLANDO --- */
+.woodstock {
+    position: fixed;
+    top: 15%;
+    width: 60px; /* Un poco más grande en desktop */
+    height: auto;
+    animation: fly-by 15s linear infinite;
+    z-index: 100;
+}
+
+@keyframes fly-by {
+    0% { left: -10%; transform: scaleX(1); }
+    49% { transform: scaleX(1); }
+    50% { left: 110%; transform: scaleX(-1); }
+    99% { transform: scaleX(-1); }
+    100% { left: -10%; transform: scaleX(1); }
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- SECCIÓN DE BIENVENIDA (HERO) --- */
+.hero {
+    background-image: url('https://i.pinimg.com/originals/4a/7a/7b/4a7a7b3e2b4f9f4b7a2d8b5c4a1b0b5e.png'); /* Fondo de pasto de Peanuts */
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    padding: 100px 20px 120px 20px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    color: #d9534f; /* Rojo Snoopy */
+    animation: fadeIn 2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #555;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.snoopy-dancing {
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    width: 150px;
+    animation: bounceIn 1.5s ease-out;
+}
+
+/* --- SECCIÓN DE DEDICATORIAS MUSICALES (CANCIONES INDIVIDUALES Y PLAYLIST) --- */
+.music-dedications {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.music-dedications h2 {
+    font-size: 2.5em;
+    color: #000;
+    border-bottom: 3px solid #f0ad4e; /* Amarillo Snoopy */
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+
+.section-intro {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.song-card {
+    background-color: #fce4ec; /* Rosa suave */
+    border: 2px solid #ffab91; /* Naranja suave */
+    border-radius: 10px;
+    padding: 25px;
+    margin: 25px auto;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+}
+
+.song-card h3 {
+    font-size: 1.8em;
+    color: #d9534f; /* Rojo Snoopy */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.song-card .song-message {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.listen-button {
+    display: inline-block;
+    background-color: #1DB954; /* Verde Spotify */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px; /* Bordes más redondeados para el botón de canción */
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.listen-button:hover {
+    background-color: #1ed760;
+    transform: translateY(-2px);
+}
+
+.playlist-final-message {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.playlist-full-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre el botón y la imagen */
+    margin-bottom: 20px;
+}
+
+.playlist-button {
+    background-color: #1DB954; /* Verde Spotify */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px; /* Bordes muy redondeados para el botón principal */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.playlist-button:hover {
+    background-color: #1ed760;
+    transform: translateY(-3px);
+}
+
+.snoopy-listening {
+    width: 150px;
+    height: auto;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.snoopy-listening:hover {
+    transform: scale(1.05);
+}
+
+
+/* --- SECCIÓN DEL MENSAJE ESPECIAL (Snoopy con corazón) --- */
+.special-message {
+    padding: 40px;
+    background-color: #c8e6c9; /* Verde suave, un prado */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+.special-message h2 {
+    font-size: 2.5em;
+    color: #000;
+}
+
+#snoopyHeart {
+    width: 180px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 20px;
+}
+
+#snoopyHeart:hover {
+    transform: scale(1.1);
+}
+
+/* --- MODAL (VENTANA EMERGENTE) --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%; /* Más flexible para móviles */
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content h3 {
+    font-size: 2em;
+    color: #d9534f; /* Rojo Snoopy */
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    color: #444;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+#close-modal:hover {
+    color: #333;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* --- CLASES DE ANIMACIÓN --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    0% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); }
+    20% { -webkit-transform: scale3d(1.1, 1.1, 1.1); transform: scale3d(1.1, 1.1, 1.1); }
+    40% { -webkit-transform: scale3d(0.9, 0.9, 0.9); transform: scale3d(0.9, 0.9, 0.9); }
+    60% { opacity: 1; -webkit-transform: scale3d(1.03, 1.03, 1.03); transform: scale3d(1.03, 1.03, 1.03); }
+    80% { -webkit-transform: scale3d(0.97, 0.97, 0.97); transform: scale3d(0.97, 0.97, 0.97); }
+    100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); }
+}
+
+/* --- MEDIA QUERIES PARA ADAPTACIÓN A DISPOSITIVOS --- */
+
+/* Para pantallas medianas (tablets en vertical, laptops pequeñas) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduce un poco el padding general */
+    }
+
+    .hero {
+        padding: 80px 15px 100px 15px; /* Ajusta padding */
+    }
+
+    .hero h1 {
+        font-size: 2.8em; /* Un poco más pequeño */
+    }
+
+    .hero p {
+        font-size: 1.3em; /* Un poco más pequeño */
+    }
+
+    .snoopy-dancing {
+        width: 120px; /* Más pequeño en pantallas medianas */
+        bottom: 15px;
+    }
+
+    .music-dedications h2, .special-message h2 {
+        font-size: 2.2em; /* Títulos más pequeños */
+    }
+
+    .section-intro, .playlist-final-message {
+        font-size: 1.1em; /* Texto introductorio más pequeño */
+    }
+
+    .song-card {
+        padding: 20px; /* Reduce padding de las tarjetas */
+        margin: 20px auto;
+    }
+
+    .song-card h3 {
+        font-size: 1.6em; /* Título de canción más pequeño */
+    }
+
+    .song-card .song-message {
+        font-size: 1em; /* Mensaje de canción más pequeño */
+    }
+
+    .listen-button {
+        font-size: 0.95em; /* Botón de canción más pequeño */
+        padding: 9px 18px;
+    }
+
+    .playlist-button {
+        font-size: 1.1em; /* Botón de playlist más pequeño */
+        padding: 13px 25px;
+    }
+
+    .snoopy-listening, #snoopyHeart {
+        width: 130px; /* Imágenes más pequeñas */
+    }
+
+    .woodstock {
+        width: 45px; /* Woodstock más pequeño */
+    }
+
+    .modal-content {
+        padding: 25px;
+        width: 95%; /* Ocupa más ancho en pantallas medianas */
+    }
+    .modal-content h3 {
+        font-size: 1.8em;
+    }
+    .modal-content p {
+        font-size: 1.1em;
+    }
+}
+
+/* Para pantallas pequeñas (smartphones) */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.9em; /* Ajuste general del tamaño de fuente */
+    }
+
+    .container {
+        padding: 10px; /* Mínimo padding */
+    }
+
+    .hero {
+        padding: 60px 10px 80px 10px; /* Padding reducido */
+    }
+
+    .hero h1 {
+        font-size: 2.2em; /* Tamaño de título principal para móvil */
+    }
+
+    .hero p {
+        font-size: 1em; /* Tamaño de texto de bienvenida */
+    }
+
+    .snoopy-dancing {
+        width: 100px; /* Snoopy bailarín más pequeño */
+        bottom: 10px;
+        right: 2%;
+    }
+
+    .music-dedications {
+        padding: 25px 15px; /* Reduce padding de la sección */
+    }
+
+    .music-dedications h2, .special-message h2 {
+        font-size: 1.8em; /* Títulos de sección para móvil */
+    }
+
+    .section-intro, .playlist-final-message {
+        font-size: 0.95em; /* Texto introductorio */
+    }
+
+    .song-card {
+        padding: 15px; /* Padding de tarjeta más compacto */
+        margin: 15px auto;
+    }
+
+    .song-card h3 {
+        font-size: 1.4em; /* Título de canción para móvil */
+    }
+
+    .song-card .song-message {
+        font-size: 0.9em; /* Mensaje de canción más pequeño */
+    }
+
+    .listen-button {
+        display: block; /* Que ocupe todo el ancho disponible */
+        width: calc(100% - 20px); /* Ajusta al padding de la tarjeta */
+        margin: 15px auto 0 auto; /* Centra el botón */
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .playlist-button {
+        font-size: 1em; /* Botón de playlist para móvil */
+        padding: 12px 20px;
+        width: auto; /* Permite que el contenido determine el ancho */
+        max-width: 90%; /* Limita el ancho máximo */
+    }
+    
+    .snoopy-listening, #snoopyHeart {
+        width: 100px; /* Imágenes aún más pequeñas */
+    }
+
+    .woodstock {
+        width: 30px; /* Woodstock el más pequeño */
+        top: 20%; /* Ajusta su posición si es necesario */
+    }
+
+    .modal-content {
+        padding: 20px;
+        width: 95%; /* Ocupa casi todo el ancho */
+    }
+    .modal-content h3 {
+        font-size: 1.6em;
+    }
+    .modal-content p {
+        font-size: 1em;
+    }
+    #close-modal {
+        font-size: 1.8em;
+    }
+    footer {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+/* Ajustes para iPhone SE/pequeños (ancho de 320px) si fuera necesario, aunque 480px ya cubre mucho */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 0.9em;
+    }
+    .music-dedications h2, .special-message h2 {
+        font-size: 1.6em;
+    }
+    .song-card h3 {
+        font-size: 1.2em;
+    }
+    .song-card .song-message {
+        font-size: 0.85em;
+    }
+    .listen-button, .playlist-button {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+    .snoopy-dancing, #snoopyHeart, .snoopy-listening {
+        width: 80px;
+    }
+    .woodstock {
+        width: 25px;
+    }
+    .modal-content h3 {
+        font-size: 1.4em;
+    }
+    .modal-content p {
+        font-size: 0.9em;
+    }
+}
